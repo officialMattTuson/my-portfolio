@@ -1,0 +1,59 @@
+.body {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  height: 100vh;
+  background-color: black;
+}
+
+.hidden {
+  position: relative;
+  padding: 20px;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity ease-in-out 0.5s;
+}
+
+.in-view {
+  opacity: 1; 
+}
+
+
+p {
+  color: white;
+}
+
+.links {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  padding-block: 5rem;
+  justify-content: space-around;
+  z-index: 1;
+  // background-color: black;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#header {
+  position: relative;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(103, 0, 94, 0.5),);
+  height: 150vh;
+}
+
+#section-1 {
+  background: linear-gradient(to bottom, rgba(103, 0, 94, 0.5), rgba(4, 75, 17, 0.5),);
+  height: 150vh;
+}
+
+#section-2 {
+  background: linear-gradient(to bottom, rgba(4, 75, 17, 0.5), rgba(0, 102, 109, 0.5));
+  height: 150vh;
+}
+
+#section-3 {
+  background: linear-gradient(to bottom, rgba(0, 102, 109, 0.5), rgba(0, 0, 0, 0));
+  height: 150vh;
+}
