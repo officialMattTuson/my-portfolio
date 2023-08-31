@@ -1,4 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
+import { mockMessageOne, mockMessageThree, mockMessageTwo } from './long-text';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,10 @@ import { Component, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+
+  mockMessageOne = mockMessageOne;
+  mockMessageTwo = mockMessageTwo;
+  mockMessageThree = mockMessageThree;
 
   constructor(private elementRef: ElementRef) {}
 
