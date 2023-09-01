@@ -1,5 +1,5 @@
 import { Component, ElementRef } from '@angular/core';
-import { mockMessageOne, mockMessageThree, mockMessageTwo } from './long-text';
+import { projectOneBlurb, projectThreeBlurb, projectTwoBlurb } from './long-text';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,9 @@ import { mockMessageOne, mockMessageThree, mockMessageTwo } from './long-text';
 })
 export class AppComponent {
 
-  mockMessageOne = mockMessageOne;
-  mockMessageTwo = mockMessageTwo;
-  mockMessageThree = mockMessageThree;
+  projectOneBlurb = projectOneBlurb;
+  projectTwoBlurb = projectTwoBlurb;
+  projectThreeBlurb = projectThreeBlurb;
 
   constructor(private elementRef: ElementRef) {}
 
