@@ -1,13 +1,16 @@
 import { Component, ElementRef } from '@angular/core';
-import { projectOneBlurb, projectThreeBlurb, projectTwoBlurb } from './long-text';
+import {
+  projectOneBlurb,
+  projectThreeBlurb,
+  projectTwoBlurb,
+} from './long-text';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
   projectOneBlurb = projectOneBlurb;
   projectTwoBlurb = projectTwoBlurb;
   projectThreeBlurb = projectThreeBlurb;
@@ -18,28 +21,21 @@ export class AppComponent {
     this.initializeObserver();
   }
 
-  handleIntersection(entries: IntersectionObserverEntry[], observer: IntersectionObserver) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-      } else {
-        entry.target.classList.remove('in-view');
-      }
-    });
+  handleIntersection(entries: IntersectionObserverEntry[]) {
+    entries.forEach((entry) =>
+      entry.target.classList.toggle('in-view', entry.isIntersecting)
+    );
   }
 
   initializeObserver() {
-
     const options: IntersectionObserverInit = {
-      root: null,
-      rootMargin: '-100px',
-      threshold: 0.3,
+      threshold: 0.6,
     };
 
     const observer = new IntersectionObserver(this.handleIntersection, options);
 
-    const sectionsToObserve: NodeListOf<Element> = this.elementRef.nativeElement.querySelectorAll('.hidden');
-    sectionsToObserve.forEach(section => observer.observe(section));
+    const sectionsToObserve: NodeListOf<Element> =
+      this.elementRef.nativeElement.querySelectorAll('.hidden');
+    sectionsToObserve.forEach((section) => observer.observe(section));
   }
-  
 }
